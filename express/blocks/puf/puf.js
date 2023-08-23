@@ -543,8 +543,6 @@ export default async function decorate($block) {
   const $leftCard = decorateCard($block, 'puf-left');
   const $rightCard = decorateCard($block, 'puf-right');
   const $footer = decorateFooter($block);
-
-  $block.innerHTML = '';
   $block.append($leftCard, $rightCard);
 
   buildCarousel('.puf-card-container', $block);
