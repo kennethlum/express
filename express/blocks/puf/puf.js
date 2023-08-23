@@ -539,7 +539,7 @@ function decorateFooter($block) {
   }
 }
 
-export default function decorate($block) {
+export default async function decorate($block) {
   const $leftCard = decorateCard($block, 'puf-left');
   const $rightCard = decorateCard($block, 'puf-right');
   const $footer = decorateFooter($block);
