@@ -298,9 +298,9 @@ async function loadFEDS() {
 }
 
 if (!window.hlx || !window.hlx.lighthouse) {
-  loadIMS();
+  //loadIMS();
   loadFEDS();
-  loadGoogleYOLO();
+  //loadGoogleYOLO();
 }
 /* Core Web Vitals RUM collection */
 
