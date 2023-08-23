@@ -2267,7 +2267,8 @@ async function loadLazy(main) {
   resolveFragments();
   removeMetadata();
   addFavIcon('/express/icons/cc-express.svg');
-  if (!window.hlx.lighthouse) loadMartech();
+  const martech = new URLSearchParams(window.location.search).get('martech');
+  if (martech) loadMartech();
   const tkID = TK_IDS[getLocale(window.location)];
   if (tkID) {
     const { default: loadFonts } = await import('./fonts.js');
