@@ -297,10 +297,13 @@ async function loadFEDS() {
   loadScript(`${prefix}/etc.clientlibs/globalnav/clientlibs/base/feds.js`).id = 'feds-script';
 }
 
+const ims = new URLSearchParams(window.location.search).get('ims');
+const feds = new URLSearchParams(window.location.search).get('feds');
+const googleyolo = new URLSearchParams(window.location.search).get('googleyolo');
 if (!window.hlx || !window.hlx.lighthouse) {
-  loadIMS();
-  //loadFEDS();
-  loadGoogleYOLO();
+  if (ims) loadIMS();
+  if (feds) loadFEDS();
+  if (googleyolo) loadGoogleYOLO();
 }
 /* Core Web Vitals RUM collection */
 
