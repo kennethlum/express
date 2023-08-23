@@ -297,7 +297,11 @@ async function loadFEDS() {
   loadScript(`${prefix}/etc.clientlibs/globalnav/clientlibs/base/feds.js`).id = 'feds-script';
 }
 
-
+if (!window.hlx || !window.hlx.lighthouse) {
+  loadIMS();
+  loadFEDS();
+  loadGoogleYOLO();
+}
 /* Core Web Vitals RUM collection */
 
 sampleRUM('cwv');
