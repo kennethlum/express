@@ -222,10 +222,6 @@ async function loadFEDS() {
         window.location.href = sparkLoginUrl;
       },
     },
-    privacy: {
-      otDomainId: '7a5eb705-95ed-4cc4-a11d-0cc5760e93db',
-      footerLinkSelector: '[data-feds-action="open-adchoices-modal"]',
-    },
     jarvis: getMetadata('enable-chat') === 'yes'
       ? {
         surfaceName: 'AdobeExpressEducation',
@@ -295,6 +291,14 @@ async function loadFEDS() {
     prefix = 'https://www.adobe.com';
   }
   loadScript(`${prefix}/etc.clientlibs/globalnav/clientlibs/base/feds.js`).id = 'feds-script';
+debugger;
+  setTimeout(() => {
+    window.fedsConfig.privacy = {
+      otDomainId: '7a5eb705-95ed-4cc4-a11d-0cc5760e93db',
+      footerLinkSelector: '[data-feds-action="open-adchoices-modal"]',
+    };
+    loadScript('https://www.adobe.com/etc.clientlibs/globalnav/clientlibs/base/privacy-standalone.js');
+  }, 3000);
 }
 
 const ims = new URLSearchParams(window.location.search).get('ims');
