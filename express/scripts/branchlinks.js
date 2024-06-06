@@ -85,6 +85,8 @@ export default async function trackBranchParameters(links) {
   links.forEach((a) => {
     if (a.href && a.href.match('adobesparkpost.app.link')) {
       a.rel = 'nofollow';
+      // only append to search branch links
+      if (!placeholders['search-branch-links']?.replaceAll(/\s/, '')?.split(',')?.includes(a.href)) return;
       const btnUrl = new URL(a.href);
       const isSearchBranchLink = placeholders['search-branch-links']?.replace(/\s/g, '').split(',').includes(`${btnUrl.origin}${btnUrl.pathname}`);
       const urlParams = btnUrl.searchParams;

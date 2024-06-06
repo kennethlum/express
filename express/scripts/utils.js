@@ -2525,7 +2525,7 @@ export async function loadArea(area = document) {
       }
     }
   }
-  const links = isDoc ? area.querySelectorAll('main a[href*="adobesparkpost.app.link"]') : area.querySelectorAll(':scope a[href*="adobesparkpost.app.link"]');
+  const links = isDoc ? area.querySelectorAll('main a[href*="adobesparkpost.app"]') : area.querySelectorAll(':scope a[href*="adobesparkpost.app"]');
   if (links.length) {
     import('./branchlinks.js').then((mod) => mod.default(links));
   }
